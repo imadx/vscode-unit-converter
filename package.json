@@ -1,8 +1,14 @@
 {
-  "name": "unit-converter",
+  "name": "unit-converter-css",
   "displayName": "Unit Converter",
   "description": "Convert CSS Units between rem,px",
-  "version": "0.0.1",
+  "icon": "images/logo.png",
+  "repository": {
+    "url": "https://github.com/imadx/vscode-unit-converter"
+  },
+  "publisher": "imadx",
+  "license": "ISC",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.68.0"
   },

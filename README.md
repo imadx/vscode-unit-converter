@@ -1,5 +1,7 @@
 # Unit Converter for CSS values
 
+![Unit Converter for CSS values in VS Code](images/logo.png)
+
 This extensions allows conversions between `px` and `rem` values.
 
 ## Features
