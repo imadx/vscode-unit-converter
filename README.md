@@ -21,6 +21,10 @@ Enjoy an easier life is easier with keyboard shortcuts
 
 ## Release Notes
 
+### 1.1.1
+
+Fixed the issue with comma separator showing up of for larger values
+
 ### 1.1.0
 
 Default keyboard keybindings added

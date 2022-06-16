@@ -20,7 +20,10 @@ export const getConvertedToken = (
   }
 };
 
-const numberFormat = Intl.NumberFormat("en-US", { maximumFractionDigits: 3 });
+const numberFormat = Intl.NumberFormat("en-US", {
+  maximumFractionDigits: 3,
+  useGrouping: false,
+});
 
 export const getPxToRem = (
   matched: string,
