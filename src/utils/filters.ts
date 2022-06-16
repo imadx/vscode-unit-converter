@@ -26,7 +26,7 @@ const numberFormat = Intl.NumberFormat("en-US", {
 });
 
 export const getPxToRem = (
-  matched: string,
+  _matched: string,
   matchedValue: string,
   _index: number,
   inputString: string,
