@@ -42,13 +42,11 @@ const convertSelectionsToUnit = async (unitConversion: UnitConversion) => {
       input = getUnitAppendedInputValue(unitConversion, input);
     }
 
-    editor.edit((builder) =>
-      builder.insert(
-        editor.selection.anchor,
-        getConvertedToken(unitConversion, input || null) || "",
-      ),
+    insertUpdatedToken(
+      editor,
+      [editor.selection],
+      [getConvertedToken(unitConversion, input || null) || ""],
     );
-
     return;
   }
 
@@ -57,8 +55,28 @@ const convertSelectionsToUnit = async (unitConversion: UnitConversion) => {
     .map(getSelectionText)
     .map(getUnitConverterFunction(unitConversion));
 
+  replaceUpdatedTokens(editor, editor.selections, updatedTokens);
+};
+
+const insertUpdatedToken = (
+  editor: vscode.TextEditor,
+  selections: readonly vscode.Selection[],
+  updatedTokens: string[],
+) => {
+  selections.forEach((selection, i) => {
+    editor.edit((builder) =>
+      builder.insert(selection.anchor, updatedTokens[i]),
+    );
+  });
+};
+
+const replaceUpdatedTokens = (
+  editor: vscode.TextEditor,
+  selections: readonly vscode.Selection[],
+  updatedTokens: (string | null)[],
+) => {
   editor.edit((builder) => {
-    editor.selections.forEach((selection, i) => {
+    selections.forEach((selection, i) => {
       const _token = updatedTokens[i];
       if (typeof _token !== "string") {
         return;
