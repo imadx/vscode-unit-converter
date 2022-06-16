@@ -42,7 +42,7 @@ const convertSelectionsToUnit = async (unitConversion: UnitConversion) => {
       input = getUnitAppendedInputValue(unitConversion, input);
     }
 
-    insertUpdatedToken(
+    replaceUpdatedTokens(
       editor,
       [editor.selection],
       [getConvertedToken(unitConversion, input || null) || ""],
@@ -56,18 +56,6 @@ const convertSelectionsToUnit = async (unitConversion: UnitConversion) => {
     .map(getUnitConverterFunction(unitConversion));
 
   replaceUpdatedTokens(editor, editor.selections, updatedTokens);
-};
-
-const insertUpdatedToken = (
-  editor: vscode.TextEditor,
-  selections: readonly vscode.Selection[],
-  updatedTokens: string[],
-) => {
-  selections.forEach((selection, i) => {
-    editor.edit((builder) =>
-      builder.insert(selection.anchor, updatedTokens[i]),
-    );
-  });
 };
 
 const replaceUpdatedTokens = (
