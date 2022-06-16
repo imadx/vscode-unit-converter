@@ -19,7 +19,16 @@ Enjoy an easier life is easier with keyboard shortcuts
 
 ![Trigger commands with key bindings](images/screenshot-2-key-bindings.png)
 
+The extension allows you to configure the px to rem ratio.  
+By default the value is to `16` (ie: `1rem` = `16px` by default). The value can be updated to `14`, `18`, etc as required.
+
+![Update px to rem ratio with settings](images/screenshot-3-settings.png)
+
 ## Release Notes
+
+### 1.3.0
+
+Allows updating `px` to `rem` ratio, which defaults to `16` (`1rem` = `16px` by default)
 
 ### 1.2.0
 

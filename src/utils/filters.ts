@@ -1,4 +1,4 @@
-import { Selection, window } from "vscode";
+import { Selection, window, workspace } from "vscode";
 import { UnitConversion } from "../types";
 
 export const getSelectionText = (selection: Selection): string | null => {
@@ -45,14 +45,16 @@ export const getPxToRem = (
     return "0.0625rem";
   }
 
-  return numberFormat.format(_matchedValue / 16) + "rem";
+  const _ratio = workspace.getConfiguration("unit-converter").pxToRemRatio;
+  return numberFormat.format(_matchedValue / _ratio) + "rem";
 };
 
 export const getRemToPx = (_matched: string, matchedValue: string) => {
   const _matchedValue = Number(matchedValue);
   if (_matchedValue === 0) return "0";
 
-  return numberFormat.format(_matchedValue * 16) + "px";
+  const _ratio = workspace.getConfiguration("unit-converter").pxToRemRatio;
+  return numberFormat.format(_matchedValue * _ratio) + "px";
 };
 
 export const getUnitConverterFunction = (unitConversion: UnitConversion) => {

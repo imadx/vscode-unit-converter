@@ -1,5 +1,9 @@
 # Change Log
 
+### 1.3.0
+
+Allows updating `px` to `rem` ratio, which defaults to `16` (`1rem` = `16px` by default)
+
 ### 1.2.0
 
 Adds support to convert values under the cursor without having to select
