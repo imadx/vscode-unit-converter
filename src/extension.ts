@@ -30,6 +30,21 @@ const convertSelectionsToUnit = async (unitConversion: UnitConversion) => {
 
   // No selections
   if (editor.selections.length === 1 && !getSelectionText(editor.selection)) {
+    // Has a matched token under the cursor
+    const rangeUnderCursor = editor.document.getWordRangeAtPosition(
+      editor.selection.anchor,
+      /(\d+\.?\d*|\.\d*)(px|rem)/,
+    );
+    if (rangeUnderCursor) {
+      const _input = editor.document.getText(rangeUnderCursor);
+      const _selection = getSelectionFromRange(rangeUnderCursor);
+      const _updatedToken = getConvertedToken(unitConversion, _input || null);
+
+      replaceUpdatedTokens(editor, [_selection], [_updatedToken || ""]);
+      return;
+    }
+
+    // No token under the cursor
     let input = await vscode.window.showInputBox({
       placeHolder: getPromptInputPlaceholder(unitConversion),
     });
@@ -98,4 +113,8 @@ const getUnitAppendedInputValue = (
     default:
       return value;
   }
+};
+
+const getSelectionFromRange = (range: vscode.Range) => {
+  return new vscode.Selection(range.start, range.end);
 };

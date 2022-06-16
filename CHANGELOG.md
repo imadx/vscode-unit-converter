@@ -1,5 +1,9 @@
 # Change Log
 
+### 1.2.0
+
+Adds support to convert values under the cursor without having to select
+
 ### 1.1.1
 
 Fixed the issue with comma separator showing up of for larger values
