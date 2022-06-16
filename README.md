@@ -10,7 +10,23 @@ Converts values in the selection to the respective value.
 
 ![Converting values from an image](images/screenshot-1.png)
 
+Adds default key bindings for the extension commands. These can be modified from the Keyboard Shortcuts editor as required.
+
+- `Alt+Z` to convert `px` to `rem`
+- `Ctrl+Shift+Alt+Z` to convert `rem` to `px`
+
+Enjoy an easier life is easier with keyboard shortcuts
+
+![Trigger commands with key bindings](images/screenshot-2-key-bindings.png)
+
 ## Release Notes
+
+### 1.1.0
+
+Default keyboard keybindings added
+
+- `Alt+Z` to convert `px` to `rem`
+- `Ctrl+Shift+Alt+Z` to convert `rem` to `px`
 
 ### 1.0.0
 

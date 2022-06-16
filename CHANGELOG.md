@@ -1,5 +1,12 @@
 # Change Log
 
+### 1.1.0
+
+Default keyboard keybindings added
+
+- `Alt+Z` to convert `px` to `rem`
+- `Ctrl+Shift+Alt+Z` to convert `rem` to `px`
+
 ### 1.0.0
 
 Initial release.

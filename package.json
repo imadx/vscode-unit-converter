@@ -16,7 +16,7 @@
   },
   "publisher": "imadx",
   "license": "ISC",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.68.0"
   },
@@ -37,6 +37,18 @@
       {
         "command": "unit-converter.convert-rem-to-px",
         "title": "Unit Converter: Convert rem to px"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "unit-converter.convert-px-to-rem",
+        "key": "alt+z",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "unit-converter.convert-rem-to-px",
+        "key": "ctrl+shift+alt+z",
+        "when": "editorTextFocus"
       }
     ]
   },
