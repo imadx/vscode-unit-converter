@@ -1,7 +1,15 @@
 {
   "name": "unit-converter-css",
   "displayName": "Unit Converter",
-  "description": "Convert CSS Units between rem,px",
+  "description": "Convert CSS Units between rem,px values",
+  "keywords": [
+    "px",
+    "rem",
+    "rem to px",
+    "px to rem",
+    "css",
+    "units"
+  ],
   "icon": "images/logo.png",
   "repository": {
     "url": "https://github.com/imadx/vscode-unit-converter"
